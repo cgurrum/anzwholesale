@@ -1,0 +1,36 @@
+spring:
+  main:
+    banner-mode: off
+  devtools:
+    livereload:
+      enabled: false
+    restart:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:anzwholesaledb1
+    driver-class-name: org.h2.Driver
+    username: anzwholesale
+    password: ENC(ITBxkv8lfo6bjCRzdFtVQ20Z7//LHB9F)
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+springdoc:
+  api-docs:
+    path: /api-docs
+
+logging:
+  level:
+    com.anz.wholesale: DEBUG
+
+jasypt:
+  encryptor:
+    algorithm: PBEWITHMD5ANDDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+
+wholesale:
+  security:
+    jwt-token:
+      secret-key: ENC(mT0NxWvl2u3IUHpo3Js7YdE6rEHxqaID)

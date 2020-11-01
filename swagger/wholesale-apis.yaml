@@ -1,0 +1,122 @@
+openapi: 3.0.1
+info:
+  title: Wholesale APIs
+  version: v1
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /accounts:
+    get:
+      tags:
+        - accounts-controller
+      operationId: getAccounts
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+  /authenticate:
+    post:
+      tags:
+        - security-token-controller
+      operationId: getSecurityToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurityTokenRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecurityTokenResponse'
+  /accounts/{accountNumber}/transactions:
+    get:
+      tags:
+        - transactions-controller
+      operationId: getTransactions
+      parameters:
+        - name: accountNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transaction'
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        accountNumber:
+          type: string
+        accountName:
+          type: string
+        accountType:
+          type: string
+          enum:
+            - Savings
+            - Current
+        balanceDate:
+          type: string
+          format: date-time
+        currency:
+          type: string
+          enum:
+            - AUD
+            - SGD
+        availableBalance:
+          type: number
+    SecurityTokenRequest:
+      type: object
+      properties:
+        customerId:
+          type: string
+        password:
+          type: string
+    SecurityTokenResponse:
+      type: object
+      properties:
+        token:
+          type: string
+    Transaction:
+      type: object
+      properties:
+        accountNumber:
+          type: string
+        accountName:
+          type: string
+        valueDate:
+          type: string
+          format: date-time
+        currency:
+          type: string
+          enum:
+            - AUD
+            - SGD
+        debitAmount:
+          type: number
+        creditAmount:
+          type: number
+        transactionType:
+          type: string
+          enum:
+            - Debit
+            - Credit
+        transactionDescription:
+          type: string
