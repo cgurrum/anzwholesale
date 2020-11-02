@@ -45,7 +45,7 @@ Use any of the following to run the application.
     --header 'Authorization: Bearer <token>'
     ```
 
-### Test Data
+### Test Data (Refer [DB Script](src/main/resources/data.sql) for full details)
 | Customer Id | Password | Scopes |
 | ------ | ------ | ------ |
 | customer1 | password1 | SCP_ACCOUNTS & SCP_DUMMY |
