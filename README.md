@@ -3,8 +3,8 @@
 ### Requirements
 * [JDK 8+](https://www.oracle.com/au/java/technologies/javase/javase-jdk8-downloads.html)
 
-### APIs
-Following are the APIs available (Refer [OpenAPI definitions](swagger/wholesale-apis.yaml) for more information).
+### Application
+This is a spring boot application which exposes the following the APIs. Refer [OpenAPI definitions](swagger/wholesale-apis.yaml) for more information.
 1) **/authenticate**
     * This API is used to get the customer authentication token. This API is public. To get the token, pass the customerId & password. If the credentials are valid, this returns a token that contains the customer id. 
 2) **/accounts**
