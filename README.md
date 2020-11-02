@@ -26,7 +26,7 @@ Use any of the following to run the application.
 #### CURL commands to invoke APIs
 1) Get JWT Token for the customer.
      ```sh
-     curl --location --request POST 'http://localhost:8080/authenticate' \
+     curl -i --location --request POST 'http://localhost:8080/authenticate' \
     --header 'Content-Type: application/json' \
     --data-raw '{
         "customerId": "customer1",
@@ -35,12 +35,12 @@ Use any of the following to run the application.
     ```
 2) Get Customer Accounts using the token.
     ```sh
-    curl --location --request GET 'http://localhost:8080/accounts' \
+    curl -i --location --request GET 'http://localhost:8080/accounts' \
     --header 'Authorization: Bearer <token>'
     ```
 3) Get Account Transactions using the token and account number.
     ```sh
-    curl --location --request GET \
+    curl -i --location --request GET \
     'http://localhost:8080/accounts/<accountNumber>/transactions' \
     --header 'Authorization: Bearer <token>'
     ```
