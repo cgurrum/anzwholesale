@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    password: dummy-password
+
+wholesale:
+  security:
+    jwt-token:
+      secret-key: dummy-password

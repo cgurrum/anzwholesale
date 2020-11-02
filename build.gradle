@@ -37,9 +37,6 @@ dependencies {
 
 test {
 	useJUnitPlatform()
-	systemProperties = [
-	        "spring.datasource.password": "dummy-password"
-	]
 }
 
 bootJar {
