@@ -56,5 +56,5 @@ Refer [DB Script](src/main/resources/data.sql) for full details. Password is has
 ### Notes
 * DB Password: **testpassword**
 * JWT Signing Key: **testjwtsecret**
-* Above secrets in the property files are encrypted using Jasypt encryptor password: **passwordkey**
+* Above secrets in the property files are encrypted using Jasypt encryptor password: **passwordkey** & algorithm: **PBEWITHMD5ANDDES**
 
