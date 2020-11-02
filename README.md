@@ -45,7 +45,8 @@ Use any of the following to run the application.
     --header 'Authorization: Bearer <token>'
     ```
 
-### Test Data (Refer [DB Script](src/main/resources/data.sql) for full details)
+### Test Data 
+Refer [DB Script](src/main/resources/data.sql) for full details. Password is hashed in database using [Bcrypt](https://en.wikipedia.org/wiki/Bcrypt) (10 rounds).
 | Customer Id | Password | Scopes |
 | ------ | ------ | ------ |
 | customer1 | password1 | SCP_ACCOUNTS & SCP_DUMMY |
