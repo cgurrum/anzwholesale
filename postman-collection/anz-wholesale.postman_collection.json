@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "608a2795-4bd4-4f2e-af42-8874bcc140ba",
+		"name": "anz-wholesale",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": \"customer1\",\r\n    \"password\": \"password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accounts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjdXN0b21lcjEiLCJhdXRoIjpbeyJhdXRob3JpdHkiOiJTQ1BfQUNDT1VOVFMifSx7ImF1dGhvcml0eSI6IlNDUF9EVU1NWSJ9XSwiaWF0IjoxNjA0Mjk0ODcyLCJleHAiOjE2MDQyOTg0NzJ9.Vk4XDwTazn1YcDiXGEOXKBr2luNLCZFGHKUz2Rsnhag",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjdXN0b21lcjEiLCJhdXRoIjpbeyJhdXRob3JpdHkiOiJTQ1BfQUNDT1VOVFMifSx7ImF1dGhvcml0eSI6IlNDUF9EVU1NWSJ9XSwiaWF0IjoxNjA0Mjk0ODcyLCJleHAiOjE2MDQyOTg0NzJ9.Vk4XDwTazn1YcDiXGEOXKBr2luNLCZFGHKUz2Rsnhag",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/accounts/CUST1-ACC1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						"CUST1-ACC1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
